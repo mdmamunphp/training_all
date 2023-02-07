@@ -1,0 +1,21 @@
+
+
+<php
+
+	if($_server['REQUEST_METHOD']=="POST"){
+	
+		echo "done";
+		}else{
+		 echo "not ok";
+		 
+		 }
+
+
+<form method="post">
+
+
+		<input type="text" name="f_name">
+		<input type="submit">
+		
+		
+		</form>

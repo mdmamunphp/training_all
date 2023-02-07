@@ -4,7 +4,7 @@
 	<head>
 	</head>
 	<body>
-		<form method="post" action="insert.php">
+		<form method="post" action="insert-2.php">
 			<table>
 				<tr>
 					<td>Name:</td>
