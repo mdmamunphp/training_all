@@ -1,16 +1,16 @@
 <?php
 
-	$localhost="localhost";
-	$root="root";
+	$severname="localhost";                                                                           (web browser name thake oita add kore)(, . ; eigula peramitar)
+	$username="root";
 	$password="";
-	$database="test_database";
-	$connect=new MYSQLI($localhost,$root,$password,$database);
+	$database="test_database";                                                                          (kon database er data oitar name )  
+	$connect=new MYSQLI($severname,$username,$password,$database);
 	
-		if($connect){
-		$data_arr=$connect->query("select * from employee");
-		while($result=$data_arr->fetch_object()) {
-		echo "<pre>";
-		print_r($result);
+		if($connect){                                                                                                       (1st option)
+		$data_arr=$connect->query("select * from employee");                              (eitar madhome all data dekhar jonno )(object akare show kore )
+		while($result=$data_arr->fetch_object()) {                                                   (object gula array akare dekhay) 
+		echo "<pre>";   																					 (array er value sajano dekhay ) ( echo php valu dekhar jonno) 
+		print_r($result);                                                                                  ( array er valu dekhar jonno ) 
 			echo "id:".$result->id ."</br>";
 			echo "first name:".$result->first_name ."</br>";
 			echo "last name:".$result->last_name ."</br>";
@@ -21,7 +21,7 @@
 			echo "joining month:".$result->joining_month ."</br>";
 		}
 		
-	}else{
+	}else{                                                                                                      (2nd option) 
 		echo"not ok";
 	}
 	

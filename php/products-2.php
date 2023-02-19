@@ -8,14 +8,21 @@
 	
 	if($connect){
 		$data_arr=$connect->query("select * from products");
+		$html="";
+		$html.="<table>";
+		
+		$html.="<tr><th>title</th><th>description</th></tr>"; 
+			
 		while($result=$data_arr->fetch_object()) {
-		echo "<pre>";
-		print_r($result);
-			echo "tittle= ".$result->tittle ."</br>";
-			echo "desc= ".$result->description."</br>";
-			echo "====================</br>";
+		
+		$html.="<tr>";
+			$html.="<td>".$result->tittle ."</td>";
+			$html.="<td>".$result->description ."</td>";
+		$html.="</tr>";
 		}
 		
+		$html.="</table>";
+		echo $html;
 	}else{
 		echo"not ok";
 	}

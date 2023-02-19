@@ -1,16 +1,16 @@
 <?php
 
-	$localhost="localhost";
-	$root="root";
+	$severname="localhost";                                                                          
+	$username="root";
 	$password="";
-	$database="test_database";
-	$connect=new MYSQLI($localhost,$root,$password,$database);
+	$database="test_database";                                                                           
+	$connect=new MYSQLI($severname,$username,$password,$database);
 	
-		if($connect){
-		$data_arr=$connect->query("select * from employee");
-		while($result=$data_arr->fetch_object()) {
-		echo "<pre>";
-		print_r($result);
+		if($connect){                                                                                                      
+		$data_arr=$connect->query("select * from employee");                              
+		while($result=$data_arr->fetch_object()) {                                                 
+		echo "<pre>";   																					  
+		print_r($result);                                                                                  
 			echo "id:".$result->id ."</br>";
 			echo "first name:".$result->first_name ."</br>";
 			echo "last name:".$result->last_name ."</br>";
@@ -21,7 +21,7 @@
 			echo "joining month:".$result->joining_month ."</br>";
 		}
 		
-	}else{
+	}else{                                                                                                      
 		echo"not ok";
 	}
 	

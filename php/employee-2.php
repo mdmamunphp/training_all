@@ -1,0 +1,47 @@
+<?php
+
+	$servername="localhost";
+	$username="root";
+	$password="";
+	$database="test_database";
+	$connect=new MYSQLI($servername,$username,$password,$database);
+	
+	if($connect){
+		$data_arr=$connect->query("select * from employee");
+			$html="";
+			$html.="<table>";
+			$html.="<tr><th>id</th><th>first_name</th><th>last_name</th><th>department_id</th><th>joining_date</th><th>joining_date</th><th>commission</th><th>joining_month</th></tr>";
+			
+	while($result=$data_arr->fetch_object()){ 
+		$html.="<tr>";
+			$html.="<td>".$result->id ."</td>";
+			$html.="<td>".$result->first_name ."</td>";
+			$html.="<td>".$result->last_name ."</td>";
+			$html.="<td>".$result->department_id ."</td>";
+			$html.="<td>".$result->joining_date ."</td>";
+			$html.="<td>".$result->salary ."</td>";
+			$html.="<td>".$result->commission ."</td>";
+			$html.="<td>".$result->joining_month ."</td>";
+		$html.="</tr>";
+	}
+		$html.="</table>";
+		echo $html;
+		
+	}else{
+		echo "not ok";
+	}
+	
+	if($_SERVER['REQUEST_METHOD']=="POST"){
+		echo"id:".$_POST['id']."</br>";
+		echo"first_name:".$_POST['first_name']."</br>";
+		echo"last_name:".$_POST['last_name']."</br>";
+		echo"department_id:".$_POST['department_id']."</br>";
+		echo"joining_date:".$_POST['joining_date']."</br>";
+		echo"salary:".$_POST['salary']."</br>";
+		echo"commission:".$_POST['commission']."</br>";
+		echo"joining_month:".$_POST['joining_month']."</br>";
+		
+	}else{
+		echo "test";
+	}
+?>
